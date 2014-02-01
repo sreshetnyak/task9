@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A550EF01189D0B5A0083F28F /* TTDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = A550EF00189D0B5A0083F28F /* TTDoctor.m */; };
+		A550EF04189D0BAE0083F28F /* TTPatient.m in Sources */ = {isa = PBXBuildFile; fileRef = A550EF03189D0BAE0083F28F /* TTPatient.m */; };
+		A550EF07189D46330083F28F /* TTStudentDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = A550EF06189D46330083F28F /* TTStudentDoctor.m */; };
 		A5E34E6218983D160007B3C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E34E6118983D160007B3C5 /* Foundation.framework */; };
 		A5E34E6418983D160007B3C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E34E6318983D160007B3C5 /* CoreGraphics.framework */; };
 		A5E34E6618983D160007B3C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E34E6518983D160007B3C5 /* UIKit.framework */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A550EEFF189D0B5A0083F28F /* TTDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTDoctor.h; sourceTree = "<group>"; };
+		A550EF00189D0B5A0083F28F /* TTDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDoctor.m; sourceTree = "<group>"; };
+		A550EF02189D0BAE0083F28F /* TTPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPatient.h; sourceTree = "<group>"; };
+		A550EF03189D0BAE0083F28F /* TTPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPatient.m; sourceTree = "<group>"; };
+		A550EF05189D46330083F28F /* TTStudentDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTStudentDoctor.h; sourceTree = "<group>"; };
+		A550EF06189D46330083F28F /* TTStudentDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTStudentDoctor.m; sourceTree = "<group>"; };
 		A5E34E5E18983D160007B3C5 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E34E6118983D160007B3C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5E34E6318983D160007B3C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +126,12 @@
 				A5E34E9918983D690007B3C5 /* TTViewController.h */,
 				A5E34E9A18983D690007B3C5 /* TTViewController.m */,
 				A5E34E9B18983D690007B3C5 /* TTViewController.xib */,
+				A550EEFF189D0B5A0083F28F /* TTDoctor.h */,
+				A550EF00189D0B5A0083F28F /* TTDoctor.m */,
+				A550EF05189D46330083F28F /* TTStudentDoctor.h */,
+				A550EF06189D46330083F28F /* TTStudentDoctor.m */,
+				A550EF02189D0BAE0083F28F /* TTPatient.h */,
+				A550EF03189D0BAE0083F28F /* TTPatient.m */,
 				A5E34E7918983D160007B3C5 /* Images.xcassets */,
 				A5E34E6818983D160007B3C5 /* Supporting Files */,
 			);
@@ -250,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A550EF07189D46330083F28F /* TTStudentDoctor.m in Sources */,
+				A550EF01189D0B5A0083F28F /* TTDoctor.m in Sources */,
 				A5E34E7218983D160007B3C5 /* TTAppDelegate.m in Sources */,
+				A550EF04189D0BAE0083F28F /* TTPatient.m in Sources */,
 				A5E34E6E18983D160007B3C5 /* main.m in Sources */,
 				A5E34E9C18983D690007B3C5 /* TTViewController.m in Sources */,
 			);
@@ -453,6 +471,7 @@
 				A5E34E9218983D160007B3C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5E34E9318983D160007B3C5 /* Build configuration list for PBXNativeTarget "DelegateTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +480,7 @@
 				A5E34E9518983D160007B3C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
