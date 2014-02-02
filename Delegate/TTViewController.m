@@ -56,7 +56,7 @@
     
     [self sortReport:doctor];
     [self sortReport:studentDoctor1];
-    [self sortReport:studentDoctor1];
+    [self sortReport:studentDoctor2];
     
     NSLog(@"________________________________________________");
     
