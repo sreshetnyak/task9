@@ -28,7 +28,7 @@
     TTStudentDoctor *studentDoctor1 = [[[TTStudentDoctor alloc]initStudentDoctorWithName:@"Ivan"]autorelease];
     TTStudentDoctor *studentDoctor2 = [[[TTStudentDoctor alloc]initStudentDoctorWithName:@"Petya"]autorelease];
     NSMutableArray *arrayWithPatient = [[[NSMutableArray alloc]init]autorelease];
-    NSInteger patientCount = 20;
+    NSInteger patientCount = 40;
     
     for (int i = 0; i < patientCount; i++) {
         TTPatient *patient = [[[TTPatient alloc]initPatientWithName:[NSString stringWithFormat:@"patient%d",i]
@@ -46,22 +46,63 @@
                 [patient setDelegate:studentDoctor2];
                 break;
         }
-        
+    
         [arrayWithPatient addObject:patient];
     }
     
     for (TTPatient *obj in arrayWithPatient) {    
-        if (![obj patientCondition]) {
-            NSLog(@"%@ problem %d",obj.name,obj.problemPlace);
-        }
+        [obj patientCondition];
     }
+    
+    [self sortReport:doctor];
+    [self sortReport:studentDoctor1];
+    [self sortReport:studentDoctor1];
+    
+    NSLog(@"________________________________________________");
+    
+    for (TTPatient *obj in arrayWithPatient) {
+        
+        if (obj.satisfied) {
+            
+            if ([[obj.delegate doctorName] isEqualToString:doctor.doctorName]) {
+                
+                obj.delegate = studentDoctor1;
+                
+                NSLog(@"%@ change doctor from %@ to %@",obj.name, doctor.doctorName, [obj.delegate doctorName]);
 
+            } else if ([[obj.delegate doctorName] isEqualToString:studentDoctor1.doctorName]) {
+                
+                obj.delegate = studentDoctor2;
+                NSLog(@"%@ change doctor from %@ to %@",obj.name, studentDoctor1.doctorName, [obj.delegate doctorName]);
+                
+            } else if ([[obj.delegate doctorName] isEqualToString:studentDoctor2.doctorName]) {
+                
+                obj.delegate = doctor;
+                NSLog(@"%@ change doctor from %@ to %@",obj.name, studentDoctor2.doctorName, [obj.delegate doctorName]);
+                
+            }
+        }
+        
+    }
 }
 
 - (float)randFloatMin:(float)low andMax:(float)high {
     CGFloat diff = high - low;
     CGFloat new = (((CGFloat) rand() / RAND_MAX) * diff) + low;
     return round(10 * new) / 10;
+}
+
+- (void)sortReport:(id)doctor {
+    
+    NSMutableDictionary *report = [doctor report];
+    
+    NSArray *dic = [report keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [obj1 compare:obj2];
+    }];
+    NSLog(@"________________________________________________Doctor %@ report",[doctor doctorName]);
+    for (NSString *key in dic) {
+        NSLog(@"%@ have symptom %@",key ,[report objectForKey:key]);
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -21,7 +21,7 @@
 
 - (void)patientBad:(TTPatient *)patient problemPlace:(TTProblem)problem{
     
-    NSLog(@"name = %@ temperature = %f",patient.name , patient.temperature);
+    NSLog(@"name = %@ temperature = %f and problem place %d",patient.name , patient.temperature,patient.problemPlace);
     
     
     if ((patient.temperature < 35.9f) || (patient.temperature > 37.f && patient.temperature < 38.f)) {
@@ -43,7 +43,9 @@
         [patient giveIceScream];
     }
     
-    [self.report setObject:patient forKey:[NSString stringWithFormat:@"%d",problem]];
+    patient.satisfied = arc4random()%2;
+    
+    [self.report setObject:[NSString stringWithFormat:@"%d",problem] forKey:patient.name];
     
 }
 @end

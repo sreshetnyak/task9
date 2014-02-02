@@ -21,6 +21,7 @@ typedef enum {
 @property (assign,nonatomic) CGFloat temperature;
 @property (strong,nonatomic) NSString *name;
 @property (assign,nonatomic) TTProblem problemPlace;
+@property (assign,nonatomic) BOOL satisfied;
 @property (unsafe_unretained,nonatomic) id <TTPatientDelegate> delegate;
 
 - (id)initPatientWithName:(NSString *)name patientTemperature:(CGFloat)temperature problemPlace:(TTProblem)problem;
